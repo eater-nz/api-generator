@@ -30,14 +30,14 @@ public class PlacesGenerator {
 	public void generate() {
 		try {
 			List<File> files = new ArrayList<>();
-			listAllPlaces("./data/places", files);
+			listAllPlaces("../input/", files);
 			log.debug("Found {} files", files.size());
 
 			List<Place> places = new ArrayList<>();
 			for (File file : files) {
 				places.add(this.yaml.decode(this.fileReader.readFile(file.getAbsolutePath()), Place.class));
 			}
-			fileReader.writeFile("./out/places.json", mapper.writeValueAsString(places));
+			fileReader.writeFile("../output/places.json", mapper.writeValueAsString(places));
 
 		} catch (Exception e) {
 			log.error("Problem when converting places", e);
