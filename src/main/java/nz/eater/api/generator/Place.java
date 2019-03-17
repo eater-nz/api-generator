@@ -21,10 +21,24 @@ public class Place {
 		
 		public String city;
 	}
-	
+
 	public String name;
 	
 	public Address address;
+
+	public List<String> id;
+
+	public boolean permanentlyClosed;
+
+	public List<String> openingHours;
+
+	public String phone;
+	
+	public double rating;
+	
+	public int rating_count;
+	
+	public String website;
 
 	@JsonProperty(access = Access.WRITE_ONLY)
 	public String addressLine;
